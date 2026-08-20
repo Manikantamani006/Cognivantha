@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { ViewState, Issue } from './types';
 import { ArrowLeft, ShieldCheck, AlertTriangle, Users, MapPin, CheckCircle, Clock, Search, Filter, User } from 'lucide-react';
+import IssueMap from './components/IssueMap';
 
 interface AuthorityDashboardProps {
   onNavigate: (view: ViewState) => void;
@@ -110,6 +111,14 @@ const AuthorityDashboard: React.FC<AuthorityDashboardProps> = ({ onNavigate, iss
               <Filter className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500" size={16} />
             </div>
           </div>
+        </div>
+
+        <div className="mb-8 bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+          <h3 className="text-lg font-semibold text-slate-800 mb-4 flex items-center">
+            <MapPin className="text-blue-500 mr-2" size={20} />
+            Civic Triage Map
+          </h3>
+          <IssueMap issues={sortedIssues} />
         </div>
 
         {/* Issue Grid */}
