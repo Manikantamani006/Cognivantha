@@ -7,7 +7,7 @@ interface LandingPageProps {
   onLogin: (view: ViewState, username: string) => void;
 }
 
-const LandingPage: React.FC<LandingPageProps> = ({ onNavigate, onLogin }) => {
+const LandingPage: React.FC<LandingPageProps> = ({ onLogin }) => {
   const [publicName, setPublicName] = useState('');
   const [publicPassword, setPublicPassword] = useState('');
   const [authName, setAuthName] = useState('');

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { ViewState, Issue } from './types';
 import { ArrowLeft, Award, Camera, MapPin, Send, AlertCircle, Clock, CheckCircle2, Flag, Loader2, User } from 'lucide-react';
+import IssueMap from './components/IssueMap';
 
 interface PublicDashboardProps {
   onNavigate: (view: ViewState) => void;
@@ -244,6 +245,14 @@ const PublicDashboard: React.FC<PublicDashboardProps> = ({ onNavigate, issues, r
                 ))
               )}
             </div>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+            <h3 className="text-lg font-semibold text-slate-800 mb-4 flex items-center">
+              <MapPin className="text-blue-500 mr-2" size={18} />
+              Recent Reports Map
+            </h3>
+            <IssueMap issues={issues} />
           </div>
         </div>
 
